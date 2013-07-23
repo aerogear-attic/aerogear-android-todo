@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.aerogear</groupId>
     <artifactId>android-todos</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <packaging>apk</packaging>
     <name>Android TODOs</name>
 
@@ -74,7 +74,7 @@
             <groupId>org.jboss.aerogear</groupId>
             <artifactId>aerogear-android</artifactId>
             <type>apklib</type>
-            <version>1.0.1</version>
+            <version>1.1.0</version>
         </dependency>
 
         <dependency>
@@ -82,7 +82,7 @@
             <artifactId>aerogear-android</artifactId>
             <scope>provided</scope>                        
             <type>jar</type>
-            <version>1.0.1</version>
+            <version>1.1.0</version>
         </dependency>
 
     </dependencies>
