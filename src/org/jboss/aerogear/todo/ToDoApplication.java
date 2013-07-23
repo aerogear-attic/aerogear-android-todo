@@ -35,6 +35,8 @@ import org.jboss.aerogear.todo.data.Task;
 import android.app.Activity;
 import android.app.Application;
 import android.support.v4.app.FragmentActivity;
+import java.util.Map;
+import org.jboss.aerogear.android.authentication.impl.AGSecurityAuthenticationModule;
 
 public class ToDoApplication extends Application {
 	private Pipeline pipeline;
@@ -90,7 +92,12 @@ public class ToDoApplication extends Application {
 
 	public void login(FragmentActivity activity, String username, String password,
 			Callback<HeaderAndBody> callback) {
-		auth.get("login", activity).login(username, password, callback);
+            Map<String, String> loginData = new HashMap<String, String>(2);
+            loginData.put("username", username);
+            loginData.put("password", password);
+            //ToDo Server isn't using the latest Picketlink server.
+            //Manually casting to use login Map until AGDROID-75 is implemented.
+            ((AGSecurityAuthenticationModule)auth.get("login")).login(loginData, callback);
 
 	}
 

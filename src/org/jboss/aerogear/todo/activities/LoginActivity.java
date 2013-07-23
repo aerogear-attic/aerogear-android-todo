@@ -61,7 +61,7 @@ public class LoginActivity extends FragmentActivity {
 		String username = text(R.id.username_field);
 		String password = text(R.id.password_field);
 		ToDoApplication app = (ToDoApplication) getApplication();
-		app.login(this, username, password, new LoginCallback());
+		app.login(this, username, password, new LoginCallback(this));
 	}
 
 	private String text(int field_id) {
