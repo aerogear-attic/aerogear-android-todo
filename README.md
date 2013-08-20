@@ -1,4 +1,4 @@
-AeroGear Android Prototype
+aerogear-android-todo [![Build Status](https://travis-ci.org/aerogear/aerogear-android-todo.png)](https://travis-ci.org/aerogear/aerogear-android-todo)
 ==========================
 
 This is a prototype application that connects to the AeroGear TODO server
