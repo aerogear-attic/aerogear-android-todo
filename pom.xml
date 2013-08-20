@@ -119,7 +119,7 @@
                         <debug>${debug}</debug>
                     </run>
                     <sdk>
-                        <platform>16</platform>
+                        <platform>17</platform>
                     </sdk>
                     <emulator>
                         <avd>${android.avd}</avd>
