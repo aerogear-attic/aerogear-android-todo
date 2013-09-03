@@ -50,7 +50,7 @@
             android:label="@string/title_activity_register" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.aerogear.proto.todos.activities.LoginActivity" />
+                android:value="org.jboss.aerogear.todo.activities.LoginActivity" />
         </activity>
     </application>
 
