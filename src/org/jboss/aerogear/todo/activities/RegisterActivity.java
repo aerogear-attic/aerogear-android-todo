@@ -17,6 +17,9 @@
 
 package org.jboss.aerogear.todo.activities;
 
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import org.jboss.aerogear.todo.R;
 import org.jboss.aerogear.todo.ToDoApplication;
 import org.jboss.aerogear.todo.callback.RegisterCallback;
@@ -27,11 +30,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-
-public class RegisterActivity extends SherlockFragmentActivity {
+public class RegisterActivity extends FragmentActivity {
 
 	protected static final String TAG = RegisterActivity.class.getSimpleName();
 
@@ -39,7 +38,9 @@ public class RegisterActivity extends SherlockFragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+		    getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 	}
 
 	@Override

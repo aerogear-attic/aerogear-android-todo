@@ -16,7 +16,9 @@
  */
 package org.jboss.aerogear.todo.activities;
 
-import org.jboss.aerogear.android.Callback;
+import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import org.jboss.aerogear.todo.R;
 import org.jboss.aerogear.todo.ToDoApplication;
 import org.jboss.aerogear.todo.callback.LogoutCallback;
@@ -34,14 +36,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+public class TodoActivity extends FragmentActivity {
 
-/**
- * @author <a href="mailto:marko.strukelj@gmail.com">Marko Strukelj</a>
- */
-public class TodoActivity extends SherlockFragmentActivity {
 	private FragmentTransaction fragmentTransaction;
 
 	public enum Lists {TASK, TAG, PROJECT};
@@ -77,9 +73,9 @@ public class TodoActivity extends SherlockFragmentActivity {
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		if (!isTablet()) {
-			getSupportMenuInflater().inflate(R.menu.todo, menu);
+			getMenuInflater().inflate(R.menu.todo, menu);
 		} else {
-			getSupportMenuInflater().inflate(R.menu.logout, menu);
+			getMenuInflater().inflate(R.menu.logout, menu);
 		}
 		return super.onCreateOptionsMenu(menu);
 	}

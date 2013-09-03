@@ -20,6 +20,7 @@ package org.jboss.aerogear.todo.fragments;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.support.v4.app.Fragment;
 import org.jboss.aerogear.android.pipeline.LoaderPipe;
 import org.jboss.aerogear.todo.R;
 import org.jboss.aerogear.todo.ToDoApplication;
@@ -41,9 +42,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragment;
+public class TaskListFragment extends Fragment implements ListFragmentCallbackHelper<Task> {
 
-public class TaskListFragment extends SherlockFragment implements ListFragmentCallbackHelper<Task> {
 	private ArrayAdapter<Task> adapter;
 	private List<Task> tasks = new ArrayList<Task>();
 	private LoaderPipe<Task> pipe;
