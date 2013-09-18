@@ -17,20 +17,19 @@
 
 package org.jboss.aerogear.todo.activities;
 
-import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Spinner;
 import org.jboss.aerogear.todo.R;
 import org.jboss.aerogear.todo.ToDoApplication;
 import org.jboss.aerogear.todo.callback.RegisterCallback;
 
-import android.os.Bundle;
-import android.support.v4.app.NavUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Spinner;
-
-public class RegisterActivity extends FragmentActivity {
+public class RegisterActivity extends ActionBarActivity {
 
 	protected static final String TAG = RegisterActivity.class.getSimpleName();
 
@@ -38,9 +37,7 @@ public class RegisterActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
-        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-		    getActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override

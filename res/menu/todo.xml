@@ -17,23 +17,26 @@
   ~ limitations under the License.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:compat="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menu_item_project"
-          android:showAsAction="always"
+          android:title="@string/projects"
           android:icon="@drawable/ic_project"
-          android:title="@string/projects"/>
+          compat:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_tag"
-          android:showAsAction="always"
+          android:title="@string/tags"
           android:icon="@drawable/ic_tag"
-          android:title="@string/tags"/>
+          compat:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_task"
-          android:showAsAction="always"
+          android:title="@string/tasks"
           android:icon="@drawable/ic_task"
-          android:title="@string/tasks"/>
+          compat:showAsAction="always"/>
+
     <item android:id="@+id/menu_logout"
-          android:showAsAction="never"
-          android:title="@string/logout"/>
+          android:title="@string/logout"
+          compat:showAsAction="always"/>
+
 </menu>

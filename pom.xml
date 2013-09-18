@@ -66,6 +66,7 @@
     <properties>
         <android.version>4.0.1.2</android.version>
         <aerogear.version>1.2.0</aerogear.version>
+        <appcompat.version>[18,)</appcompat.version>
 
         <maven.android.plugin.verson>3.6.0</maven.android.plugin.verson>
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
@@ -100,6 +101,20 @@
             <scope>provided</scope>                        
             <type>jar</type>
             <version>${aerogear.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>android.support</groupId>
+            <artifactId>compatibility-v7-appcompat</artifactId>
+            <version>${appcompat.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>android.support</groupId>
+            <artifactId>compatibility-v7-appcompat</artifactId>
+            <version>${appcompat.version}</version>
+            <type>apklib</type>
         </dependency>
 
     </dependencies>

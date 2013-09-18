@@ -28,3 +28,8 @@ before_install:
   - cd $PWD/maven-android-sdk-deployer/extras/compatibility-v4
   - mvn install -N --quiet
   - cd ../../..
+
+  # Install locally compatibility-v7-appcompat
+  - cd $PWD/maven-android-sdk-deployer/extras/compatibility-v7-appcompat
+  - mvn install -N --quiet
+  - cd ../../..

@@ -17,20 +17,19 @@
 
 package org.jboss.aerogear.todo.activities;
 
-import org.jboss.aerogear.todo.R;
-import org.jboss.aerogear.todo.ToDoApplication;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.EditText;
+import org.jboss.aerogear.todo.R;
+import org.jboss.aerogear.todo.ToDoApplication;
 import org.jboss.aerogear.todo.callback.LoginCallback;
 
-public class LoginActivity extends FragmentActivity {
+public class LoginActivity extends ActionBarActivity {
 
 	protected static final String TAG = LoginActivity.class.getSimpleName();
 
@@ -50,13 +49,13 @@ public class LoginActivity extends FragmentActivity {
 	}
 
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == R.id.menu_register) {
 			startActivity(new Intent(getApplicationContext(),
 					RegisterActivity.class));
 			return true;
 		}
-		return super.onMenuItemSelected(featureId, item);
+		return super.onOptionsItemSelected(item);
 	}
 
 	public void login(View loginButtonButton) {
