@@ -47,7 +47,6 @@ public class ToDoApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 
-
 		try {
 
             URL baseURL = new URL("http://todo-aerogear.rhcloud.com/todo-server");
@@ -55,7 +54,7 @@ public class ToDoApplication extends Application {
             // Set up Authenticator
 			auth = new Authenticator(baseURL);
 			AuthenticationConfig config = new AuthenticationConfig();
-			config.setEnrollEndpoint("/auth/register");
+			config.setEnrollEndpoint("/auth/enroll");
 
 			AuthenticationModule authModule = auth.auth("login", config);
 
