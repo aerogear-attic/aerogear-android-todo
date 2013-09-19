@@ -62,7 +62,7 @@ public class LoginActivity extends ActionBarActivity {
 		String username = text(R.id.username_field);
 		String password = text(R.id.password_field);
 		ToDoApplication app = (ToDoApplication) getApplication();
-		app.login(this, username, password, new LoginCallback(this));
+		app.login(this, username, password, new LoginCallback());
 	}
 
 	private String text(int field_id) {

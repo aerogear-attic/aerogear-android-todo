@@ -23,28 +23,27 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
-import org.jboss.aerogear.android.Callback;
+import org.jboss.aerogear.android.pipeline.support.AbstractFragmentActivityCallback;
 
-public class LoginCallback implements Callback<HeaderAndBody> {
+public class LoginCallback extends AbstractFragmentActivityCallback<HeaderAndBody> {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 398218128L;
 	private static final String TAG = LoginCallback.class.getSimpleName();
         private FragmentActivity activity;
 
-	public LoginCallback(FragmentActivity activity) {
-            this.activity = activity;
+	public LoginCallback() {
+            super(serialVersionUID);
 	}
 	
         @Override
 	public void onSuccess(HeaderAndBody data) {
-		activity.startActivity(new Intent(activity, TodoActivity.class));
-                activity = null;
+		getFragmentActivity().startActivity(new Intent(getFragmentActivity(), TodoActivity.class));
 	}
 
         @Override
 	public void onFailure(Exception e) {
 		Log.e(TAG, e.getMessage(), e);
-		Toast.makeText(activity, "Login failed", Toast.LENGTH_LONG)
+		Toast.makeText(getFragmentActivity(), "Login failed", Toast.LENGTH_LONG)
 				.show();
                 activity = null;
 	}

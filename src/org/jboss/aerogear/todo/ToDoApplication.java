@@ -96,7 +96,7 @@ public class ToDoApplication extends Application {
             loginData.put("password", password);
             //ToDo Server isn't using the latest Picketlink server.
             //Manually casting to use login Map until AGDROID-75 is implemented.
-            ((AGSecurityAuthenticationModule)auth.get("login")).login(loginData, callback);
+            auth.get("login", activity).login(loginData, callback);
 
 	}
 
