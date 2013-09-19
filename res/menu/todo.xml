@@ -22,17 +22,17 @@
 
     <item android:id="@+id/menu_item_project"
           android:title="@string/projects"
-          android:icon="@drawable/ic_project"
+          android:icon="@drawable/ic_menu_project"
           compat:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_tag"
           android:title="@string/tags"
-          android:icon="@drawable/ic_tag"
+          android:icon="@drawable/ic_menu_tag"
           compat:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_task"
           android:title="@string/tasks"
-          android:icon="@drawable/ic_task"
+          android:icon="@drawable/ic_menu_task"
           compat:showAsAction="always"/>
 
     <item android:id="@+id/menu_logout"
