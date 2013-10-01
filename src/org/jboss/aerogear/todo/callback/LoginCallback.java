@@ -27,22 +27,22 @@ import org.jboss.aerogear.android.pipeline.support.AbstractFragmentActivityCallb
 
 public class LoginCallback extends AbstractFragmentActivityCallback<HeaderAndBody> {
 
-	private static final long serialVersionUID = 398218128L;
-	private static final String TAG = LoginCallback.class.getSimpleName();
+    private static final long serialVersionUID = 398218128L;
+    private static final String TAG = LoginCallback.class.getSimpleName();
 
-	public LoginCallback() {
-            super(serialVersionUID);
-	}
-	
-        @Override
-	public void onSuccess(HeaderAndBody data) {
-		getFragmentActivity().startActivity(new Intent(getFragmentActivity(), TodoActivity.class));
-	}
+    public LoginCallback() {
+        super(serialVersionUID);
+    }
 
-        @Override
-	public void onFailure(Exception e) {
-		Log.e(TAG, e.getMessage(), e);
-		Toast.makeText(getFragmentActivity(), "Login failed", Toast.LENGTH_LONG)
-				.show();
-	}
+    @Override
+    public void onSuccess(HeaderAndBody data) {
+        getFragmentActivity().startActivity(new Intent(getFragmentActivity(), TodoActivity.class));
+        getFragmentActivity().finish();
+    }
+
+    @Override
+    public void onFailure(Exception e) {
+        Log.e(TAG, e.getMessage(), e);
+        Toast.makeText(getFragmentActivity(), "Login failed", Toast.LENGTH_LONG).show();
+    }
 }

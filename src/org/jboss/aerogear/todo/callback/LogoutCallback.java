@@ -16,29 +16,31 @@
  */
 package org.jboss.aerogear.todo.callback;
 
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 import org.jboss.aerogear.android.pipeline.support.AbstractFragmentActivityCallback;
+import org.jboss.aerogear.todo.activities.LoginActivity;
 
 public class LogoutCallback extends AbstractFragmentActivityCallback<Void> {
 
-	private static final long serialVersionUID = 1L;
-	private static final String TAG = LogoutCallback.class.getSimpleName();
+    private static final long serialVersionUID = 1L;
+    private static final String TAG = LogoutCallback.class.getSimpleName();
 
-	public LogoutCallback() {
-		super(TAG);
-	}
-	
-	@Override
-	public void onFailure(Exception e) {
-        Log.e(TAG, e.getMessage(), e);
-        Toast.makeText(getFragmentActivity(), e.getMessage(), Toast.LENGTH_LONG)
-                .show();
+    public LogoutCallback() {
+        super(TAG);
     }
 
-	@Override
-	public void onSuccess(Void data) {
-		getFragmentActivity().finish();
-	}
+    @Override
+    public void onFailure(Exception e) {
+        Log.e(TAG, e.getMessage(), e);
+        Toast.makeText(getFragmentActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onSuccess(Void data) {
+        getFragmentActivity().finish();
+        getFragmentActivity().startActivity(new Intent(getFragmentActivity(), LoginActivity.class));
+    }
 
 }
