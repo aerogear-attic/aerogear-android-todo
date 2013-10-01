@@ -94,10 +94,7 @@ public class ToDoApplication extends Application {
             Map<String, String> loginData = new HashMap<String, String>(2);
             loginData.put("username", username);
             loginData.put("password", password);
-            //ToDo Server isn't using the latest Picketlink server.
-            //Manually casting to use login Map until AGDROID-75 is implemented.
             auth.get("login", activity).login(loginData, callback);
-
 	}
 
 	public void logout(FragmentActivity activity, Callback<Void> callback) {
