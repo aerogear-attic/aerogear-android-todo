@@ -16,6 +16,8 @@
  */
 package org.jboss.aerogear.todo.callback;
 
+import android.util.Log;
+import android.widget.Toast;
 import org.jboss.aerogear.android.pipeline.support.AbstractFragmentActivityCallback;
 
 public class LogoutCallback extends AbstractFragmentActivityCallback<Void> {
@@ -29,8 +31,10 @@ public class LogoutCallback extends AbstractFragmentActivityCallback<Void> {
 	
 	@Override
 	public void onFailure(Exception e) {
-		getFragmentActivity().finish();
-	}
+        Log.e(TAG, e.getMessage(), e);
+        Toast.makeText(getFragmentActivity(), e.getMessage(), Toast.LENGTH_LONG)
+                .show();
+    }
 
 	@Override
 	public void onSuccess(Void data) {
