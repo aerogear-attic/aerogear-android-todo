@@ -29,7 +29,6 @@ public class LoginCallback extends AbstractFragmentActivityCallback<HeaderAndBod
 
 	private static final long serialVersionUID = 398218128L;
 	private static final String TAG = LoginCallback.class.getSimpleName();
-        private FragmentActivity activity;
 
 	public LoginCallback() {
             super(serialVersionUID);
@@ -45,6 +44,5 @@ public class LoginCallback extends AbstractFragmentActivityCallback<HeaderAndBod
 		Log.e(TAG, e.getMessage(), e);
 		Toast.makeText(getFragmentActivity(), "Login failed", Toast.LENGTH_LONG)
 				.show();
-                activity = null;
 	}
 }
