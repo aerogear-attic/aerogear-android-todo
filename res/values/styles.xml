@@ -18,7 +18,6 @@
 
 <resources>
     <style name="Font">
-        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">18dp</item>
     </style>
     <style name="FormLabel" parent="Font">

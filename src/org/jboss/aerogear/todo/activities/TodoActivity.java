@@ -16,32 +16,22 @@
  */
 package org.jboss.aerogear.todo.activities;
 
-import org.jboss.aerogear.android.Callback;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import org.jboss.aerogear.todo.R;
 import org.jboss.aerogear.todo.ToDoApplication;
 import org.jboss.aerogear.todo.callback.LogoutCallback;
 import org.jboss.aerogear.todo.data.Project;
 import org.jboss.aerogear.todo.data.Tag;
 import org.jboss.aerogear.todo.data.Task;
-import org.jboss.aerogear.todo.fragments.ProjectFormFragment;
-import org.jboss.aerogear.todo.fragments.ProjectListFragment;
-import org.jboss.aerogear.todo.fragments.TagFormFragment;
-import org.jboss.aerogear.todo.fragments.TagListFragment;
-import org.jboss.aerogear.todo.fragments.TaskFormFragment;
-import org.jboss.aerogear.todo.fragments.TaskListFragment;
+import org.jboss.aerogear.todo.fragments.*;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+public class TodoActivity extends ActionBarActivity {
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
-
-/**
- * @author <a href="mailto:marko.strukelj@gmail.com">Marko Strukelj</a>
- */
-public class TodoActivity extends SherlockFragmentActivity {
 	private FragmentTransaction fragmentTransaction;
 
 	public enum Lists {TASK, TAG, PROJECT};
@@ -75,16 +65,18 @@ public class TodoActivity extends SherlockFragmentActivity {
 		return getResources().getBoolean(R.bool.isTablet);
 	}
 
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		if (!isTablet()) {
-			getSupportMenuInflater().inflate(R.menu.todo, menu);
+			getMenuInflater().inflate(R.menu.todo, menu);
 		} else {
-			getSupportMenuInflater().inflate(R.menu.logout, menu);
+			getMenuInflater().inflate(R.menu.logout, menu);
 		}
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menu_item_project :
 				showList(Lists.PROJECT);
@@ -100,7 +92,7 @@ public class TodoActivity extends SherlockFragmentActivity {
 						.logout(this, new LogoutCallback());
 				break;
 		}
-		return super.onMenuItemSelected(featureId, item);
+		return super.onOptionsItemSelected(item);
 	}
 
 	public void showProjectForm() {

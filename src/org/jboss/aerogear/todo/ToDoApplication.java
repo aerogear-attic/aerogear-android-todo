@@ -47,7 +47,6 @@ public class ToDoApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 
-
 		try {
 
             URL baseURL = new URL("http://todo-aerogear.rhcloud.com/todo-server");
@@ -55,7 +54,7 @@ public class ToDoApplication extends Application {
             // Set up Authenticator
 			auth = new Authenticator(baseURL);
 			AuthenticationConfig config = new AuthenticationConfig();
-			config.setEnrollEndpoint("/auth/register");
+			config.setEnrollEndpoint("/auth/enroll");
 
 			AuthenticationModule authModule = auth.auth("login", config);
 
@@ -95,10 +94,7 @@ public class ToDoApplication extends Application {
             Map<String, String> loginData = new HashMap<String, String>(2);
             loginData.put("username", username);
             loginData.put("password", password);
-            //ToDo Server isn't using the latest Picketlink server.
-            //Manually casting to use login Map until AGDROID-75 is implemented.
-            ((AGSecurityAuthenticationModule)auth.get("login")).login(loginData, callback);
-
+            auth.get("login", activity).login(loginData, callback);
 	}
 
 	public void logout(FragmentActivity activity, Callback<Void> callback) {

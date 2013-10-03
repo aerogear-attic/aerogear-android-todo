@@ -42,8 +42,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockDialogFragment;
-
 public class TaskFormFragment extends Fragment {
 
 	private final Task task;
@@ -140,7 +138,7 @@ public class TaskFormFragment extends Fragment {
 				"datePicker");
 	}
 
-	private class DatePickerFragment extends SherlockDialogFragment
+	private class DatePickerFragment extends DialogFragment
 			implements
 				DatePickerDialog.OnDateSetListener {
 

@@ -15,9 +15,9 @@
   ~ limitations under the License.
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:compat="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_register"
-        android:title="@string/register"
-        android:orderInCategory="100"
-        android:showAsAction="always" />
+          android:title="@string/register"
+          compat:showAsAction="always"/>
 </menu>
