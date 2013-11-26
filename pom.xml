@@ -60,7 +60,7 @@
         <aerogear.version>1.3.0</aerogear.version>
         <appcompat.version>[18,)</appcompat.version>
 
-        <maven.android.plugin.verson>3.6.0</maven.android.plugin.verson>
+        <maven.android.plugin.verson>3.8.0</maven.android.plugin.verson>
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
         <java.version>1.7</java.version>
 
