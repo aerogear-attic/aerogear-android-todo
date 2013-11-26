@@ -62,7 +62,7 @@
 
         <maven.android.plugin.verson>3.6.0</maven.android.plugin.verson>
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
-        <java.version>1.6</java.version>
+        <java.version>1.7</java.version>
 
         <android.avd>15</android.avd>
         <android.platform>17</android.platform>
