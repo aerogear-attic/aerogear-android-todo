@@ -113,7 +113,6 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <sourceDirectory>src</sourceDirectory>
-        <testSourceDirectory>test</testSourceDirectory>
         <pluginManagement>
             <plugins>
                 <plugin>
